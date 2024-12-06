@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+selenium
+bs4
+webdriver_manager
+pandas
+pyodbc
+apscheduler
