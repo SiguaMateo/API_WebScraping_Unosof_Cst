@@ -2,12 +2,12 @@ try:
     from fastapi import FastAPI
     import uvicorn
     from task import start_scheduler, get_data_task
-
+    from src import manage_data
 except Exception as e:
     print(f"Error al importar las librerías en main.py, {e}")
 
 app = FastAPI(
-    title="API WebScraping DAE Unosof",
+    title="API WebScraping Cst Unosof",
     description="API para la extracción de datos de la página de Unosof",
     version="1.0.0"
 )
@@ -23,6 +23,10 @@ def trigger_get_data():
     """
     get_data_task()
     return {"message": "Tarea de extracción ejecutada manualmente"}
+
+@app.get("/save")
+def save():
+    manage_data.save()
 
 if __name__ == "__main__":
     start_scheduler()  # Iniciar el programador al arrancar la API

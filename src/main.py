@@ -8,7 +8,6 @@ try:
     from selenium.webdriver.support import expected_conditions as EC
     from selenium.webdriver.support.select import Select
     from bs4 import BeautifulSoup
-    from datetime import datetime, timedelta, date
     from src import data_base, send_mail
     import pandas as pd
     import os
